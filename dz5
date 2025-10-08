@@ -4,13 +4,21 @@
 int main() {
     double x = 14.26;
     double y = -1.22;
-    double z = 3.5 * 1e2;
+    double z = 3.5 * 1e2;  // 3.5 × 10² = 350
+
+    double numerator = 2 * cos(x - M_PI/6);
+    double denominator = 0.5 + pow(sin(y), 2);
+    double fraction1 = numerator / denominator;
     
-    double t = (2 * cos(x - M_PI/6)) / (0.5 + pow(sin(y), 2)) * 
-               (1 + pow(z, 2) / (3 - pow(z, 2) / 5));
+    double inner_fraction = pow(z, 2) / (3 - pow(z, 2) / 5);
+    double bracket = 1 + inner_fraction;
     
-    printf("Результат: %.6f\n", t);
-    printf("Ожидаемый: 0.564846\n");
-    
+    double t = fraction1 * bracket;
+
+    printf("x = %.2f\n", x);
+    printf("y = %.2f\n", y);
+    printf("z = %.2f\n", z);
+    printf("Результат t = %.6f\n", t);
+    printf("Ожидаемый результат: 0.564846\n");
     return 0;
 }
