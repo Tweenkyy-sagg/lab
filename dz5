@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x = 14.26;
+    double y = -1.22;
+    double z = 3.5 * 1e2;
+    
+    double t = (2 * cos(x - M_PI/6)) / (0.5 + pow(sin(y), 2)) * 
+               (1 + pow(z, 2) / (3 - pow(z, 2) / 5));
+    
+    printf("Результат: %.6f\n", t);
+    printf("Ожидаемый: 0.564846\n");
+    
+    return 0;
+}
